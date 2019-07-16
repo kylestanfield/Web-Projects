@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--
+  Written by Kyle Stanfield
+-->
+<html>
+  <style>
+    #survey-form {
+      padding: 8pt 8pt 8pt 8pt;
+      background-color: hsl(130, 0%, 95%);
+      margin: 16pt 16pt 16pt 16pt;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      align-content: space-around;
+    }
+    #body {
+      background-color: hsl(130, 30%, 75%);
+      font-family: Helvetica;
+    }
+    #title {
+      text-align: center;
+    }
+    #description {
+      text-align: center;
+      font-size: 1.1em;
+    }
+    #number {
+      min: 0;
+      max: 115;
+    }
+    .textinput {
+      
+    }
+  </style>
+  <head>
+    <title>Survey Page</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Sample survey page">
+  </head>
+  <body id="body">
+    <div>
+      <h1 id="title">Personal Information Survey</h1>
+      <p id="description">Thank you for electing to share your personal details with me.</p>
+    </div>
+    <form id="survey-form">
+        <div class="textinput">
+          <label id="name-label" for="name" >Name:</label>
+          <input type="text" id="name" name="text1" placeholder="Enter your name">
+        </div>
+        <div class="textinput">
+          <label id="email-label" for="text">Email:</label>
+          <input type="email" id="email" name="text2" placeholder="Enter your email">
+        </div>
+        <div class="textinput">
+          <label id="number-label" for="num">Number:</label>
+          <input type="number" name="num" id="number" placeholder="Age">
+        </div>
+        <div class="textinput">
+          <label for="comment">Comments:</label>
+          <input type="text" id="commentbox" name="comment">
+        </div>
+    </form>
+  </body>
+</html>
