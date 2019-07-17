@@ -10,11 +10,12 @@
       margin: 16pt auto 16pt auto;
       display: grid;
       grid-template-columns: auto auto;
-      grid-template-rows: auto auto auto auto;
+      grid-template-rows: auto auto auto auto auto auto auto auto;
       justify-content: center;
       align-items: center;
       width: 66.6%;
-      height: 20em;
+      height: 35em;
+      grid-grap: 0px px;
     }
     .survey-border {
       border-color: hsl(130, 15%, 85%);
@@ -36,6 +37,24 @@
       text-align: center;
       font-size: 1.1em;
     }
+    #name {
+      width: 20em;
+    }
+    #radiocity {
+      display: flex;
+      flex-direction: column;
+    }
+    #checkbox-div {
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-template-rows:auto auto auto auto;
+      grid-gap: 0px 0px;
+    }
+    #submit {
+      width: 6em;
+      border-radius: 12%;
+      background-color: hsl(80, 30%, 50%);
+    }
   </style>
   <head>
     <title>Survey Page</title>
@@ -50,18 +69,48 @@
     <div id="survey-div">
       <form id="survey-form" class="survey-border" method="post">
         <label id="name-label" for="name" >Name:</label>
-        <input type="text" id="name" name="text1" placeholder="Enter your name">
+        <input type="text" id="name" placeholder="Enter your name" required>
         
-        <label id="email-label" for="text">Email:</label>
-        <input type="email" id="email" name="text2" placeholder="Enter your email">
+        <label id="email-label" for="email">Email:</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
         
-        <label id="number-label" for="num">Number:</label>
-        <input type="number" min="0" max="115" name="num" id="number" placeholder="Age">
+        <label id="number-label" for="number">Age:</label>
+        <input type="number" min="0" max="115" id="number" placeholder="Age">
         
-        <label for="comment">Comments:</label>
-        <input type="text" id="commentbox" name="comment">
-
-        <select>
+        <label for="radiocity">Choose your preferred mode of transport:</label>
+        <div id="radiocity">
+          <label for="bike"> 
+            <input type="radio" name="transport" value="bike" id="bike" checked>Bike
+          </label> <br>
+          <label for="car">
+            <input type="radio" name="transport" id="car" value="car">Car or Rideshare
+          </label>
+          <label for="foot">
+            <input type="radio" name="transport" value="foot" id="foot">Walking
+          </label>
+        </div>
+        
+        <label for="student-year">Enter your class level:</label>
+        <select name="student-year" id="dropdown">
+          <option value="first">1st year</option>
+          <option value="second">2nd year</option>
+          <option value="third">3rd year</option>
+          <option value="fourth">4th year</option>
+          <option value="fifth">5th year</option>
+        </select>
+        
+        
+        <label for="stub">Please check which foods you will bring to the potluck on Thursday at Sharkey's!</label>
+        <div id="checkbox-div">
+          <input type="checkbox" value="protein">Protein dish<br>
+          <input type="checkbox" value="beverage">Beverages<br>
+          <input type="checkbox" value="salad">Salad<br>
+          <input type="checkbox" value="appetizer">Appetizer<br>
+        </div>
+        
+        <label for="commentbox">Please let me know if you have any comments, questions, or concerns.</label>
+        <textarea id="commentbox" rows="5" cols="40" placeholder="Comments..."></textarea>
+        <input type="submit" value="Submit" id="submit">
       </form>
     </div>
     
